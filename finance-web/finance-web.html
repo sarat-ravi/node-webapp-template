@@ -1,0 +1,12 @@
+<head>
+    <title>Finance</title>
+</head>
+
+<body>
+    {{>loginButtons}}
+    {{ #if currentUser }}
+        <h1>Welcome!!</h1>
+    {{else}}
+        <h1>Sign in!!</h1>
+    {{/if}}
+</body>

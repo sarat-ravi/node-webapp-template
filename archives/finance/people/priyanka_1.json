@@ -1,0 +1,9 @@
+{
+    "first_name": "Priyanka", 
+    "income": 0, 
+    "last_name": "Dadlani", 
+    "me": false, 
+    "middle_name": "Murli", 
+    "py/object": "pynance.model.person.Person", 
+    "uid": "1"
+}
