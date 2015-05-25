@@ -4,9 +4,11 @@
 </head>
 
 <template name='mainLayout'>
+  <body>
   {{> header}}
   {{> yield}}
   {{initFoundation}}
+  </body>
 </template>
 
 <!-- Delete this template and it’s route at both/routes.js -->
