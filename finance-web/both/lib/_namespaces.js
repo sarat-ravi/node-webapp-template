@@ -5,3 +5,5 @@ db = {};
 
 Securities = {}
 SecuritiesController = {}
+Entities = {}
+EntitiesController = {}

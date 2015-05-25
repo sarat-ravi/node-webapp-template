@@ -8,3 +8,4 @@ meteor-platform
 iron:router
 insecure
 autopublish
+fourseven:scss
