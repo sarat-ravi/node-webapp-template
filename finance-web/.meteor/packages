@@ -9,4 +9,4 @@ iron:router
 insecure
 autopublish
 fourseven:scss
-foundation5-sass
+foundation
