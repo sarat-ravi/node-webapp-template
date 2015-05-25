@@ -3,3 +3,5 @@
 // mini-mongo collection namespace
 db = {};
 
+Securities = {}
+SecuritiesController = {}
