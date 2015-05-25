@@ -21,5 +21,11 @@ Router.map(function () {
   this.route('entitiesShow', { path: '/entity/:id',      controller: EntitiesController.Show });
   this.route('entitiesEdit', { path: '/entity/edit/:id', controller: EntitiesController.Edit });
 
+  // transaction routes
+  this.route('transactions',     { path: '/transaction',          controller: TransactionsController.Index });
+  this.route('transactionsNew',  { path: '/transaction/new',      controller: TransactionsController.New });
+  this.route('transactionsShow', { path: '/transaction/:id',      controller: TransactionsController.Show });
+  this.route('transactionsEdit', { path: '/transaction/edit/:id', controller: TransactionsController.Edit });
+
 });//<end-routes>
 
