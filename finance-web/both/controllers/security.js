@@ -1,3 +1,35 @@
+
+
+SecuritiesController = AppController.extend({
+  layoutTemplate: "blogLayout",
+
+  onBeforeAction: function() {
+    console.log("  [SecuritiesController]: loading", this.url);
+    this.next();
+  },
+
+  index: function() {
+    console.log("[SecuritiesController]: index");
+    this.render('securities', {
+      data: {title: "Sarat's Securities"} 
+    });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // page for a list of Securities - /securities
 SecuritiesController.Index = AppController.extend({
   template: 'securities',

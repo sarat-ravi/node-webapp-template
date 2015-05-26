@@ -5,8 +5,23 @@
 
 <template name='mainLayout'>
   <body>
-  {{> header}}
-  {{> yield}}
+  {{> header }}
+  {{> yield }}
+  {{initFoundation}}
+  </body>
+</template>
+
+<template name='blogLayout'>
+  <body>
+  {{> header }}
+    <div class="row">
+
+      <!-- main column -->
+      <div class="large-12 columns" role="content">
+        {{> yield }} 
+      </div>
+           
+    </div>
   {{initFoundation}}
   </body>
 </template>
