@@ -6,14 +6,6 @@
 <template name='mainLayout'>
   <body>
   {{> header }}
-  {{> yield }}
-  {{initFoundation}}
-  </body>
-</template>
-
-<template name='blogLayout'>
-  <body>
-  {{> header }}
     <div class="row">
 
       <!-- main column -->
@@ -27,7 +19,7 @@
 </template>
 
 <!-- Delete this template and it’s route at both/routes.js -->
-<template name='homeTemp'>
+<template name='main'>
   <h1>Welcome to Meteor Generate!</h1>
 
   <p>To get started run <b>mgen controller posts</b> to create all pages for

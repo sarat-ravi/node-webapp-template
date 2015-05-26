@@ -10,3 +10,6 @@ insecure
 autopublish
 fourseven:scss
 foundation
+useraccounts:foundation
+accounts-password
+zimme:iron-router-active

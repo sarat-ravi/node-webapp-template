@@ -1,7 +1,7 @@
 
 
 SecuritiesController = AppController.extend({
-  layoutTemplate: "blogLayout",
+  layoutTemplate: "mainLayout",
 
   onBeforeAction: function() {
     console.log("  [SecuritiesController]: loading", this.url);
