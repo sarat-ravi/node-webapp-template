@@ -4,6 +4,26 @@
 <div class='securities'>
   <h1>Page: {{title}}</h1>
   <p>Find me in client/pages/security/index.html</p>
+  <table>
+  {{#each securities}}
+    <tr>
+      <td>
+        {{title}}
+      </td>
+      <td>
+        {{description}}   
+      </td>
+      <td>
+        {{type}}   
+      </td>
+      <td>
+        {{quantity}}   
+      </td>
+    </tr>
+  {{/each}}       
+  </table>
+
+  <a href="{{pathFor 'securityNew'}}">Add Security</a>
 </div>
 
 {{/Layout}}

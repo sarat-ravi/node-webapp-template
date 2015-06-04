@@ -1,7 +1,10 @@
 
-
 SecuritiesController = AppController.extend({
   layoutTemplate: "mainLayout",
+
+  waitOn: function() {
+    // return Meteor.subscribe('securities');
+  },
 
   onBeforeAction: function() {
     console.log("  [SecuritiesController]: loading", this.url);
@@ -10,8 +13,22 @@ SecuritiesController = AppController.extend({
 
   index: function() {
     console.log("[SecuritiesController]: index");
+    // Meteor.subscribe('securities');
+    var ret = db.securities.find({});
+    // console.log(ret);
     this.render('securities', {
-      data: {title: "Sarat's Securities"} 
+      data: {
+        title: "Sarat's Securities",
+        // securities: db.securities.find()
+        securities: ret,
+      } 
+    });
+  },
+
+  new: function() {
+    console.log("[SecuritiesController]: new");
+    this.render('securityNew', {
+      data: {} 
     });
   }
 });
