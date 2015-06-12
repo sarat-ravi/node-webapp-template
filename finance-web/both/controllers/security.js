@@ -30,7 +30,17 @@ SecuritiesController = AppController.extend({
     this.render('securityNew', {
       data: {} 
     });
-  }
+  },
+
+  edit: function() {
+    console.log("[SecuritiesController]: edit " + this.params._id);
+    var security = db.securities.findOne({_id: this.params._id});
+    this.render('securityEdit', {
+      data: {
+        security: security,
+      },
+    });
+  },
 });
 
 

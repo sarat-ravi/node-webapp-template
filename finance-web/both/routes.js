@@ -7,6 +7,7 @@ Router.configure({
 Router.route('/', {name: 'main', controller: 'MainController', action: 'index' });
 Router.route('/securities', {name: 'securities', controller: 'SecuritiesController', action: 'index' });
 Router.route('/security/new', {name: 'securityNew', controller: 'SecuritiesController', action: 'new' });
+Router.route('/security/edit/:_id', {name: 'securityEdit', controller: 'SecuritiesController', action: 'edit' });
 
 Router.map(function () {
 
@@ -14,7 +15,7 @@ Router.map(function () {
   // this.route('securities',     { path: '/security',          controller: SecuritiesController.Index });
   // this.route('securitiesNew',  { path: '/security/new',      controller: SecuritiesController.New });
   this.route('securitiesShow', { path: '/security/:id',      controller: SecuritiesController.Show });
-  this.route('securitiesEdit', { path: '/security/edit/:id', controller: SecuritiesController.Edit });
+  //this.route('securitiesEdit', { path: '/security/edit/:id', controller: SecuritiesController.Edit });
 
   // entity routes
   this.route('entities',     { path: '/entities',          controller: EntitiesController.Index });
