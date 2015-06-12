@@ -3,6 +3,25 @@
 <div class='security-show'>
   <h1>Page: securityShow</h1>
   <p>Find me in client/pages/securityShow/show.html</p>
+  <table>
+    <tr>
+      <td>
+        {{security.title}}
+      </td>
+      <td>
+        {{security.description}}   
+      </td>
+      <td>
+        {{security.type}}   
+      </td>
+      <td>
+        {{security.quantity}}   
+      </td>
+      <td>
+        <a href="{{pathFor 'securityEdit' _id=security._id}}">Edit</a>
+      </td>
+    </tr>
+  </table>
 </div>
 
 </template>
