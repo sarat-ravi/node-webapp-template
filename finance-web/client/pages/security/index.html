@@ -25,6 +25,9 @@
       <td>
         <a href="{{pathFor 'securityEdit' _id=this._id}}">Edit</a>
       </td>
+      <td>
+        {{> quickRemoveButton collection="db.securities" _id=this._id}}
+      </td>
     </tr>
   {{/each}}       
   </table>
