@@ -1,8 +1,8 @@
 db.securities = new Meteor.Collection('securities');
 db.securities.attachSchema(new SimpleSchema({
-  title: {
+  name: {
     type: String,
-    label: "Human Readable Title",
+    label: "Human Readable Name",
     max: 200
   },
   description: {
@@ -24,4 +24,22 @@ db.securities.attachSchema(new SimpleSchema({
 
 
 db.entities = new Meteor.Collection('entities');
+db.entities.attachSchema(new SimpleSchema({
+  name: {
+    type: String,
+    label: "Human Readable Name",
+    max: 200
+  },
+  description: {
+    type: String,
+    label: "A description of the entity",
+    optional: true,
+  },
+  type: {
+    type: String,
+    label: "Code to uniquely identify the security",
+    max: 200
+  },
+}));
+
 db.transactions = new Meteor.Collection('transactions');
