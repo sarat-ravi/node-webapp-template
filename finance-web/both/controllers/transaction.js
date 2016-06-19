@@ -1,68 +1,53 @@
-// page for a list of Transactions - /transactions
-TransactionsController.Index = AppController.extend({
-  template: 'transactions',
+TransactionsController = AppController.extend({
+  layoutTemplate: "mainLayout",
 
   waitOn: function() {
-    //return Meteor.subscribe('transactions');
-  },
-
-  data: function() {
-    //return db.transactions.find();
+    // return Meteor.subscribe('transactions');
   },
 
   onBeforeAction: function() {
-    console.log("  [TransactionsController.Index]: loading", this.url);
+    console.log("  [TransactionsController]: loading", this.url);
     this.next();
-  }
-});
-
-
-// page for creating a single Transaction - /transactions/new/:id
-TransactionsController.New = AppController.extend({
-  template: 'transactionsNew',
-
-  onBeforeAction: function() {
-    console.log("  [TransactionsController.New]: loading", this.url);
-    this.next();
-  }
-});
-
-
-// page for showing a single Transaction - /transactions/:id
-TransactionsController.Show = AppController.extend({
-  template: 'transactionsShow',
-
-  waitOn: function() {
-    //return Meteor.subscribe('transaction', this.params.id);
   },
 
-  data: function() {
-    //return db.transactions.findOne(this.params.id);
+  index: function() {
+    console.log("[TransactionsController]: index");
+    // Meteor.subscribe('transactions');
+    var ret = db.transactions.find({});
+    // console.log(ret);
+    this.render('transactions', {
+      data: {
+        title: "Sarat's transactions",
+        // transactions: db.transactions.find()
+        transactions: ret,
+      } 
+    });
   },
 
-  onBeforeAction: function() {
-    console.log("  [TransactionsController.Show]: loading", this.url);
-    this.next();
-  }
+  show: function() {
+    console.log("[TransactionsController]: show " + this.params._id);
+    var transaction = db.transactions.findOne({_id: this.params._id});
+    this.render('transactionShow', {
+      data: {
+        transaction: transaction,
+      },
+    });
+  },
+
+  new: function() {
+    console.log("[TransactionsController]: new");
+    this.render('transactionNew', {
+      data: {} 
+    });
+  },
+
+  edit: function() {
+    console.log("[TransactionsController]: edit " + this.params._id);
+    var security = db.transactions.findOne({_id: this.params._id});
+    this.render('transactionEdit', {
+      data: {
+        transaction: transaction,
+      },
+    });
+  },
 });
-
-
-// show edit page for single Transaction : /transactions/edit/:id
-TransactionsController.Edit = AppController.extend({
-  template: 'transactionsEdit',
-
-  waitOn: function() {
-    //return Meteor.subscribe('transaction', this.params.id);
-  },
-
-  data: function() {
-    //return db.transactions.findOne(this.params.id);
-  },
-
-  onBeforeAction: function() {
-    console.log("  [TransactionsController.Edit]: loading", this.url);
-    this.next();
-  }
-});
-
-

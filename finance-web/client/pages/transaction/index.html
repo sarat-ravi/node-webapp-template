@@ -3,6 +3,32 @@
 <div class='transaction'>
   <h1>Page: transaction</h1>
   <p>Find me in client/pages/transaction/index.html</p>
+  <table>
+  {{#each transactions}}
+    <tr>
+      <td>
+        {{name}}
+      </td>
+      <td>
+        {{description}}   
+      </td>
+      <td>
+        {{type}}   
+      </td>
+      <td>
+        <a href="{{pathFor 'transactionShow' _id=this._id}}">Show</a>
+      </td>
+      <td>
+        <a href="{{pathFor 'transactionEdit' _id=this._id}}">Edit</a>
+      </td>
+      <td>
+        {{> quickRemoveButton collection="db.transactions" _id=this._id}}
+      </td>
+    </tr>
+  {{/each}}       
+  </table>
+
+  <a href="{{pathFor 'transactionNew'}}">Add transaction</a>
 </div>
 
 </template>

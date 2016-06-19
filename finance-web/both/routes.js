@@ -15,6 +15,11 @@ Router.route('/entity/new', {name: 'entityNew', controller: 'EntitiesController'
 Router.route('/entity/edit/:_id', {name: 'entityEdit', controller: 'EntitiesController', action: 'edit' });
 Router.route('/entity/show/:_id', {name: 'entityShow', controller: 'EntitiesController', action: 'show' });
 
+Router.route('/transactions', {name: 'transactions', controller: 'TransactionsController', action: 'index' });
+Router.route('/transaction/new', {name: 'transactionNew', controller: 'TransactionsController', action: 'new' });
+Router.route('/transaction/edit/:_id', {name: 'transactionEdit', controller: 'TransactionsController', action: 'edit' });
+Router.route('/transaction/show/:_id', {name: 'transactionShow', controller: 'TransactionsController', action: 'show' });
+
 Router.map(function () {
 
   // security routes
@@ -30,10 +35,10 @@ Router.map(function () {
   // this.route('entitiesEdit', { path: '/entity/edit/:id', controller: EntitiesController.Edit });
 
   // transaction routes
-  this.route('transactions',     { path: '/transactions',          controller: TransactionsController.Index });
-  this.route('transactionsNew',  { path: '/transaction/new',      controller: TransactionsController.New });
-  this.route('transactionsShow', { path: '/transaction/:id',      controller: TransactionsController.Show });
-  this.route('transactionsEdit', { path: '/transaction/edit/:id', controller: TransactionsController.Edit });
+  // this.route('transactions',     { path: '/transactions',          controller: TransactionsController.Index });
+  // this.route('transactionsNew',  { path: '/transaction/new',      controller: TransactionsController.New });
+  // this.route('transactionsShow', { path: '/transaction/:id',      controller: TransactionsController.Show });
+  // this.route('transactionsEdit', { path: '/transaction/edit/:id', controller: TransactionsController.Edit });
 
 });//<end-routes>
 
