@@ -1,10 +1,15 @@
 var express = require('express')
 var app = express()
+var expressHandlebars = require('express-handlebars')
 
+// Configure Express App
+app.engine('handlebars', expressHandlebars({defaultLayout: 'main'}))
+app.set('view engine', 'handlebars')
 app.use('/style', express.static(__dirname + '/node_modules/bootstrap/dist/'))
 
+// Router Logic
 app.get('/', function(req, res) {
-    res.send('Hello World!')
+    res.render('home')
 })
 
 function startServer(port) {
