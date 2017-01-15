@@ -6,6 +6,7 @@ var expressHandlebars = require('express-handlebars')
 app.engine('handlebars', expressHandlebars({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 app.use('/style', express.static(__dirname + '/node_modules/bootstrap/dist/'))
+app.use('/css', express.static(__dirname + '/css/'))
 
 // Router Logic
 app.get('/', function(req, res) {
