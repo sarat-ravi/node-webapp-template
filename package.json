@@ -10,6 +10,7 @@
     "node-sass": "^4.3.0"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "reload": "^1.1.0"
   }
 }

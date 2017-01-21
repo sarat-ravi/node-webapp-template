@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 var express = require('express')
+var http = require('http')
+var reload = require('reload')
 var app = express()
 var expressHandlebars = require('express-handlebars')
 
@@ -20,7 +22,9 @@ app.get('/', function(req, res) {
 })
 
 function startServer(port) {
-    app.listen(3000, function() {
+    var server = http.createServer(app)
+    reload(server, app)
+    server.listen(port, function() {
         console.log('Server started, listening on port ' + port)
     })
 }

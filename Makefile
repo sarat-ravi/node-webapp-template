@@ -16,4 +16,4 @@ build: css
 	
 .PHONY: run
 run: build
-	${NODEMON} ${SRC_NODEMON_ARGS} ./app.js & ${NODEMON} ${CSS_NODEMON_ARGS} --exec "make css" && fg
+	${NODEMON} ${SRC_NODEMON_ARGS} --exec "node --harmony app.js" & ${NODEMON} ${CSS_NODEMON_ARGS} --exec "make css" && fg
