@@ -23,6 +23,7 @@ app.get('/', function(req, res) {
 
 function startServer(port) {
     var server = http.createServer(app)
+    // TODO(Sarat): Don't use reload in prod environment
     reload(server, app)
     server.listen(port, function() {
         console.log('Server started, listening on port ' + port)
