@@ -15,6 +15,7 @@ app.use('/style', express.static(__dirname + '/node_modules/bootstrap/dist/'))
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'))
 app.use('/css', express.static(__dirname + '/css/'))
 app.use('/js', express.static(__dirname + '/js/'))
+app.use('/assets', express.static(__dirname + '/assets/'))
 
 // Router Logic
 app.get('/', function(req, res) {
@@ -30,5 +31,5 @@ function startServer(port) {
     })
 }
 
-startServer(3000)
+startServer(9000)
 
